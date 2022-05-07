@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  services.nginx:
+    container_name: services.nginx
+    image: nginx:1.21.6
+    ports:
+      - 80:80
+    networks:
+      - services.network
+    volumes:
+      - ./conf.d/:/etc/nginx/conf.d/:ro
+      - ${SERVICE_1_PATH}:/var/www/${SERVICE_1_NAME}
+      - ${SERVICE_2_PATH}:/var/www/${SERVICE_2_NAME}
+      - ${SERVICE_3_PATH}:/var/www/${SERVICE_3_NAME}
+
+networks:
+  # proxy_services.network
+  services.network:
+    driver: bridge

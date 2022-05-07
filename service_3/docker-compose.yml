@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  service_3.php:
+    container_name: service_3.php
+    build: .
+    networks:
+      - proxy_services.network
+    volumes:
+      - ./:/var/www/service_3
+
+networks:
+  proxy_services.network:
+    external: true
