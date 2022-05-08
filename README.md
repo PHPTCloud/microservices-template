@@ -1,4 +1,4 @@
-# Microservice tempalte
+# Microservice template
 
 Пример использования Docker + Docker compose в связке с Nginx + PHP-FPM{N}.
 
